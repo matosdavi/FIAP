@@ -2,11 +2,9 @@ package br.com.fintech.fiap.main;
 
 import br.com.fintech.fiap.dao.CartaoDAO;
 import br.com.fintech.fiap.dao.InvestimentoDAO;
+import br.com.fintech.fiap.dao.MetaDAO;
 import br.com.fintech.fiap.dao.RendaDAO;
-import br.com.fintech.fiap.entity.Cartao;
-import br.com.fintech.fiap.entity.Investimento;
-import br.com.fintech.fiap.entity.Renda;
-import br.com.fintech.fiap.entity.Usuario;
+import br.com.fintech.fiap.entity.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -56,19 +54,34 @@ public class Teste {
 //
 //        rendaDAO.insert(davi, salario);
 
-        InvestimentoDAO investimentoDAO = new InvestimentoDAO();
+//        InvestimentoDAO investimentoDAO = new InvestimentoDAO();
+//
+//        Investimento selic = new Investimento();
+//        Usuario davi = new Usuario();
+//
+//        davi.setCodigoUsuario(3);
+//        selic.setCodigoInvestimento(9);
+//        selic.setNomeInvestimento("Investimento SELIC");
+//        selic.setDescInvestimento("3% ao ano");
+//        selic.setValorInvestimento(3000.00);
+//        selic.setDataInvestimento(LocalDate.of(2022, 06, 20));
+//        selic.setValorRendimento(25);
+//
+//        investimentoDAO.insert(davi, selic);
 
-        Investimento selic = new Investimento();
+        MetaDAO metaDAO = new MetaDAO();
+
+        Meta maio = new Meta();
         Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
-        selic.setCodigoInvestimento(9);
-        selic.setNomeInvestimento("Investimento SELIC");
-        selic.setDescInvestimento("3% ao ano");
-        selic.setValorInvestimento(3000.00);
-        selic.setDataInvestimento(LocalDate.of(2022, 06, 20));
-        selic.setValorRendimento(25);
+        maio.setCodigoMeta(9);
+        maio.setNomeMeta("Meta para maio");
+        maio.setDescMeta("Poupar 1000 reais no mês de maio");
+        maio.setValorMeta(1000.00);
+        maio.setDataInicio(LocalDate.of(2023, 05, 01));
+        maio.setDataTermino(LocalDate.of(2023, 05, 31));
 
-        investimentoDAO.insert(davi, selic);
+        metaDAO.insert(davi, maio);
     }
 }

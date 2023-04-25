@@ -4,44 +4,64 @@ import java.time.LocalDate;
 
 public class Meta {
 
+    private int codigoMeta;
     private String nomeMeta;
     private String descMeta;
     private double valorMeta;
-    private LocalDate dataMeta;
+    private LocalDate dataInicio;
+    private LocalDate dataTermino;
+
+    public int getCodigoMeta() {
+        return codigoMeta;
+    }
+
+    public Meta setCodigoMeta(int codigoMeta) {
+        this.codigoMeta = codigoMeta;
+        return this;
+    }
 
     public String getNomeMeta() {
         return nomeMeta;
     }
 
-    public void setNomeMeta(String nomeMeta) {
+    public Meta setNomeMeta(String nomeMeta) {
         this.nomeMeta = nomeMeta;
+        return this;
     }
 
     public String getDescMeta() {
         return descMeta;
     }
 
-    public void setDescMeta(String descMeta) {
+    public Meta setDescMeta(String descMeta) {
         this.descMeta = descMeta;
+        return this;
     }
 
     public double getValorMeta() {
         return valorMeta;
     }
 
-    public void setValorMeta(double valorMeta) {
+    public Meta setValorMeta(double valorMeta) {
         this.valorMeta = valorMeta;
+        return this;
     }
 
-    public LocalDate getDataMeta() {
-        return dataMeta;
+    public LocalDate getDataInicio() {
+        return dataInicio;
     }
 
-    public void setDataMeta(LocalDate dataMeta) {
-        this.dataMeta = dataMeta;
+    public Meta setDataInicio(LocalDate dataInicio) {
+        this.dataInicio = dataInicio;
+        return this;
     }
 
-    public void adicionarMeta(String nomeMeta, double valorMeta) {
-        Meta meta = new Meta();
+    public LocalDate getDataTermino() {
+        return dataTermino;
+    }
+
+    public Meta setDataTermino(LocalDate dataTermino) {
+        this.dataTermino = dataTermino;
+        return this;
     }
 }
