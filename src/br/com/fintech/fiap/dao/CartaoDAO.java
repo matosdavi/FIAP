@@ -1,6 +1,7 @@
 package br.com.fintech.fiap.dao;
 
 import br.com.fintech.fiap.entity.Cartao;
+import br.com.fintech.fiap.entity.Usuario;
 import br.com.fintech.fiap.factory.ConnectionFactory;
 
 import java.sql.*;
@@ -15,7 +16,7 @@ public class CartaoDAO {
         this.conexao = new ConnectionFactory().conectar();
     }
 
-    public void insert(Cartao cartao) throws SQLException {
+    public void insert(Usuario usuario, Cartao cartao) throws SQLException {
         String sql = "insert into t_cartao" +
                 "(cd_usuario," +
                 "cd_cartao, " +
