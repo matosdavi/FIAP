@@ -1,6 +1,8 @@
 package br.com.fintech.fiap.entity;
 
 import javax.xml.crypto.Data;
+import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Usuario {

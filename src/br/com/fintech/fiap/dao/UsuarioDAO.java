@@ -4,6 +4,7 @@ import br.com.fintech.fiap.entity.Usuario;
 import br.com.fintech.fiap.factory.ConnectionFactory;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class UsuarioDAO {
 
     private Connection conexao;
 
-    public UsuarioDAO() {
+    public UsuarioDAO() throws ClassNotFoundException {
         this.conexao = new ConnectionFactory().conectar();
     }
 
