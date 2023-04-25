@@ -1,11 +1,13 @@
 package br.com.fintech.fiap.entity;
 
+import java.time.LocalDate;
+
 public class Meta {
 
     private String nomeMeta;
     private String descMeta;
     private double valorMeta;
-    private String dataMeta;
+    private LocalDate dataMeta;
 
     public String getNomeMeta() {
         return nomeMeta;
@@ -31,11 +33,11 @@ public class Meta {
         this.valorMeta = valorMeta;
     }
 
-    public String getDataMeta() {
+    public LocalDate getDataMeta() {
         return dataMeta;
     }
 
-    public void setDataMeta(String dataMeta) {
+    public void setDataMeta(LocalDate dataMeta) {
         this.dataMeta = dataMeta;
     }
 

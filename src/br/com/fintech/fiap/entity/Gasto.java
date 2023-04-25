@@ -1,12 +1,14 @@
 package br.com.fintech.fiap.entity;
 
+import java.time.LocalDate;
+
 public class Gasto {
 
     private int codigoGasto;
     private String nomeGasto;
     private String descGasto;
     private double valorGasto;
-    private String dataGasto;
+    private LocalDate dataGasto;
 
     public int getCodigoGasto() {
         return codigoGasto;
@@ -40,11 +42,11 @@ public class Gasto {
         this.valorGasto = valorGasto;
     }
 
-    public String getDataGasto() {
+    public LocalDate getDataGasto() {
         return dataGasto;
     }
 
-    public void setDataGasto(String dataGasto) {
+    public void setDataGasto(LocalDate dataGasto) {
         this.dataGasto = dataGasto;
     }
 }

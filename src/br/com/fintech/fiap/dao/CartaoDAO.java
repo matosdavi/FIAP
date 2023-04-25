@@ -93,7 +93,7 @@ public class CartaoDAO {
             cartao.setNumCartao(rs.getString("nr_cartao"));
             cartao.setDataVencimento(rs.getDate("dt_vencimento").toLocalDate());
             cartao.setNumCvv(rs.getString("nr_cvv"));
-            cartao.setValorLimite(rs.getDouble("vl_limite"));;
+            cartao.setValorLimite(rs.getDouble("vl_limite"));
         }
 
         stmt.close();

@@ -1,7 +1,6 @@
 package br.com.fintech.fiap.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Cartao {
 
@@ -12,7 +11,6 @@ public class Cartao {
     private LocalDate dataVencimento;
     private String numCvv;
     private double valorLimite;
-    private List<Cartao> listaCartao;
 
     public int getCodigoCartao() {
         return codigoCartao;
@@ -68,13 +66,5 @@ public class Cartao {
 
     public void setValorLimite(double valorLimite) {
         this.valorLimite = valorLimite;
-    }
-
-    public List<Cartao> getListaCartao() {
-        return listaCartao;
-    }
-
-    public void setListaCartao(List<Cartao> listaCartao) {
-        this.listaCartao = listaCartao;
     }
 }

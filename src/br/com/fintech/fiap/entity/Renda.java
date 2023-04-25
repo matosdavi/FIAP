@@ -1,50 +1,57 @@
 package br.com.fintech.fiap.entity;
 
+import java.time.LocalDate;
+
 public class Renda {
 
     private int codigoRenda;
     private String nomeRenda;
     private String descRenda;
     private double valorRenda;
-    private String dataRenda;
+    private LocalDate dataRenda;
 
     public int getCodigoRenda() {
         return codigoRenda;
     }
 
-    public void setCodigoRenda(int codigoRenda) {
+    public Renda setCodigoRenda(int codigoRenda) {
         this.codigoRenda = codigoRenda;
+        return this;
     }
 
     public String getNomeRenda() {
         return nomeRenda;
     }
 
-    public void setNomeRenda(String nomeRenda) {
+    public Renda setNomeRenda(String nomeRenda) {
         this.nomeRenda = nomeRenda;
+        return this;
     }
 
     public String getDescRenda() {
         return descRenda;
     }
 
-    public void setDescRenda(String descRenda) {
+    public Renda setDescRenda(String descRenda) {
         this.descRenda = descRenda;
+        return this;
     }
 
     public double getValorRenda() {
         return valorRenda;
     }
 
-    public void setValorRenda(double valorRenda) {
+    public Renda setValorRenda(double valorRenda) {
         this.valorRenda = valorRenda;
+        return this;
     }
 
-    public String getDataRenda() {
+    public LocalDate getDataRenda() {
         return dataRenda;
     }
 
-    public void setDataRenda(String dataRenda) {
+    public Renda setDataRenda(LocalDate dataRenda) {
         this.dataRenda = dataRenda;
+        return this;
     }
 }

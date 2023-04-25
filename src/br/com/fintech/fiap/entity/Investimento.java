@@ -1,59 +1,67 @@
 package br.com.fintech.fiap.entity;
 
+import java.time.LocalDate;
+
 public class Investimento {
 
     private int codigoInvestimento;
     private String nomeInvestimento;
     private String descInvestimento;
     private double valorInvestimento;
-    private String dataInvestimento;
-    private String valorRendimento;
+    private LocalDate dataInvestimento;
+    private double valorRendimento;
 
     public int getCodigoInvestimento() {
         return codigoInvestimento;
     }
 
-    public void setCodigoInvestimento(int codigoInvestimento) {
+    public Investimento setCodigoInvestimento(int codigoInvestimento) {
         this.codigoInvestimento = codigoInvestimento;
+        return this;
     }
 
     public String getNomeInvestimento() {
         return nomeInvestimento;
     }
 
-    public void setNomeInvestimento(String nomeInvestimento) {
+    public Investimento setNomeInvestimento(String nomeInvestimento) {
         this.nomeInvestimento = nomeInvestimento;
+        return this;
     }
 
     public String getDescInvestimento() {
         return descInvestimento;
     }
 
-    public void setDescInvestimento(String descInvestimento) {
+    public Investimento setDescInvestimento(String descInvestimento) {
         this.descInvestimento = descInvestimento;
+        return this;
     }
 
     public double getValorInvestimento() {
         return valorInvestimento;
     }
 
-    public void setValorInvestimento(double valorInvestimento) {
+    public Investimento setValorInvestimento(double valorInvestimento) {
         this.valorInvestimento = valorInvestimento;
+        return this;
     }
 
-    public String getDataInvestimento() {
+    public LocalDate getDataInvestimento() {
         return dataInvestimento;
     }
 
-    public void setDataInvestimento(String dataInvestimento) {
+    public Investimento setDataInvestimento(LocalDate dataInvestimento) {
         this.dataInvestimento = dataInvestimento;
+        return this;
     }
 
-    public String getValorRendimento() {
+    public double getValorRendimento() {
         return valorRendimento;
     }
 
-    public void setValorRendimento(String valorRendimento) {
+    public Investimento setValorRendimento(double valorRendimento) {
         this.valorRendimento = valorRendimento;
+        return this;
     }
 }
