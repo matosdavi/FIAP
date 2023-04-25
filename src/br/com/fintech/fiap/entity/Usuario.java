@@ -1,16 +1,12 @@
 package br.com.fintech.fiap.entity;
 
-import javax.xml.crypto.Data;
-import java.text.DateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Usuario {
 
-
     private int codigoUsuario;
     private String nomeUsuario;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private String genero;
     private String email;
     private String senha;
@@ -34,11 +30,11 @@ public class Usuario {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public Usuario setDataNascimento(Date dataNascimento) {
+    public Usuario setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
         return this;
     }

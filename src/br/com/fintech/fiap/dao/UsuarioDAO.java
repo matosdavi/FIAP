@@ -4,7 +4,7 @@ import br.com.fintech.fiap.entity.Usuario;
 import br.com.fintech.fiap.factory.ConnectionFactory;
 
 import java.sql.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class UsuarioDAO {
 
         stmt.setInt(1, usuario.getCodigoUsuario());
         stmt.setString(2, usuario.getNomeUsuario());
-        stmt.setDate(3, (Date) usuario.getDataNascimento());
+        stmt.setDate(3, Date.valueOf(usuario.getDataNascimento()));
         stmt.setString(4, usuario.getGenero());
         stmt.setString(5, usuario.getEmail());
         stmt.setString(6, usuario.getSenha());
@@ -56,7 +56,7 @@ public class UsuarioDAO {
             Usuario usuario = new Usuario();
             usuario.setCodigoUsuario(rs.getInt("cd_usuario"));
             usuario.setNomeUsuario(rs.getString("nm_usuario"));
-            usuario.setDataNascimento(rs.getDate("dt_nascimento"));
+            usuario.setDataNascimento(rs.getDate("dt_nascimento").toLocalDate());
             usuario.setGenero(rs.getString("ds_genero"));
             usuario.setEmail(rs.getString("ds_email"));
             usuario.setSenha(rs.getString("ds_senha"));
@@ -77,11 +77,10 @@ public class UsuarioDAO {
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
-
             usuario = new Usuario();
             usuario.setCodigoUsuario(rs.getInt("cd_usuario"));
             usuario.setNomeUsuario(rs.getString("nm_usuario"));
-            usuario.setDataNascimento(rs.getDate("dt_nascimento"));
+            usuario.setDataNascimento(rs.getDate("dt_nascimento").toLocalDate());
             usuario.setGenero(rs.getString("ds_genero"));
             usuario.setEmail(rs.getString("ds_email"));
             usuario.setSenha(rs.getString("ds_senha"));
@@ -108,7 +107,7 @@ public class UsuarioDAO {
         PreparedStatement stmt = conexao.prepareStatement(sql);
 
         stmt.setString(1, usuario.getNomeUsuario());
-        stmt.setDate(2 , (Date) usuario.getDataNascimento());
+        stmt.setDate(2 , Date.valueOf(usuario.getDataNascimento()));
         stmt.setString(3, usuario.getGenero());
         stmt.setString(4, usuario.getEmail());
         stmt.setString(5, usuario.getSenha());
