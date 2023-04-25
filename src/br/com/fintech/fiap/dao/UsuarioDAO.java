@@ -2,9 +2,7 @@ package br.com.fintech.fiap.dao;
 
 import br.com.fintech.fiap.entity.Usuario;
 import br.com.fintech.fiap.factory.ConnectionFactory;
-
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +68,7 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public Usuario selectById(int codigoUsuario) throws SQLException {
+    public Usuario selectByCd(int codigoUsuario) throws SQLException {
         Usuario usuario = null ;
         String sql = "select * from t_usuario where cd_usuario = ?";
         PreparedStatement stmt = conexao.prepareStatement(sql);
