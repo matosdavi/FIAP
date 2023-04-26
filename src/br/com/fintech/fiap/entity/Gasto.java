@@ -10,6 +10,9 @@ public class Gasto {
     private double valorGasto;
     private LocalDate dataGasto;
 
+    public Gasto() {
+    }
+
     public int getCodigoGasto() {
         return codigoGasto;
     }
@@ -48,5 +51,16 @@ public class Gasto {
 
     public void setDataGasto(LocalDate dataGasto) {
         this.dataGasto = dataGasto;
+    }
+
+    @Override
+    public String toString() {
+        return "Gasto{" +
+                "codigoGasto=" + codigoGasto +
+                ", nomeGasto='" + nomeGasto + '\'' +
+                ", descGasto='" + descGasto + '\'' +
+                ", valorGasto=" + valorGasto +
+                ", dataGasto=" + dataGasto +
+                '}';
     }
 }

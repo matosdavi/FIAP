@@ -10,6 +10,9 @@ public class Renda {
     private double valorRenda;
     private LocalDate dataRenda;
 
+    public Renda() {
+    }
+
     public int getCodigoRenda() {
         return codigoRenda;
     }
@@ -53,5 +56,16 @@ public class Renda {
     public Renda setDataRenda(LocalDate dataRenda) {
         this.dataRenda = dataRenda;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Renda{" +
+                "codigoRenda=" + codigoRenda +
+                ", nomeRenda='" + nomeRenda + '\'' +
+                ", descRenda='" + descRenda + '\'' +
+                ", valorRenda=" + valorRenda +
+                ", dataRenda=" + dataRenda +
+                '}';
     }
 }

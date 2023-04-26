@@ -12,6 +12,9 @@ public class Cartao {
     private String numCvv;
     private double valorLimite;
 
+    public Cartao() {
+    }
+
     public int getCodigoCartao() {
         return codigoCartao;
     }
@@ -66,5 +69,18 @@ public class Cartao {
 
     public void setValorLimite(double valorLimite) {
         this.valorLimite = valorLimite;
+    }
+
+    @Override
+    public String toString() {
+        return "Cartao{" +
+                "codigoCartao=" + codigoCartao +
+                ", nomeCartao='" + nomeCartao + '\'' +
+                ", descCartao='" + descCartao + '\'' +
+                ", numCartao='" + numCartao + '\'' +
+                ", dataVencimento=" + dataVencimento +
+                ", numCvv='" + numCvv + '\'' +
+                ", valorLimite=" + valorLimite +
+                '}';
     }
 }

@@ -17,93 +17,114 @@ public class InvestimentoDAO {
     }
 
     public void insert(Usuario usuario, Investimento investimento) throws SQLException {
-        String sql = "insert into t_investimento" +
-                "(cd_usuario," +
-                "cd_investimento, " +
-                "nm_investimento, " +
-                "ds_investimento, " +
-                "vl_investimento, " +
-                "dt_investimento, " +
-                "vl_rendimento_investimento" +
-                ") " +
-                "values" +
-                "(?, " +
-                "?, " +
-                "?, " +
-                "?, " +
-                "?, " +
-                "?, " +
-                "?" +
-                ")";
-        PreparedStatement stmt = conexao.prepareStatement(sql);
 
-        stmt.setInt(1, usuario.getCodigoUsuario());
-        stmt.setInt(2, investimento.getCodigoInvestimento());
-        stmt.setString(3, investimento.getNomeInvestimento());
-        stmt.setString(4, investimento.getDescInvestimento());
-        stmt.setDouble(5, investimento.getValorInvestimento());
-        stmt.setDate(6, Date.valueOf(investimento.getDataInvestimento()));
-        stmt.setDouble(7, investimento.getValorRendimento());
+        try {
+            String sql = "insert into t_investimento" +
+                    "(cd_usuario," +
+                    "cd_investimento, " +
+                    "nm_investimento, " +
+                    "ds_investimento, " +
+                    "vl_investimento, " +
+                    "dt_investimento, " +
+                    "vl_rendimento_investimento" +
+                    ") " +
+                    "values" +
+                    "(?, " +
+                    "?, " +
+                    "?, " +
+                    "?, " +
+                    "?, " +
+                    "?, " +
+                    "?" +
+                    ")";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+
+            stmt.setInt(1, usuario.getCodigoUsuario());
+            stmt.setInt(2, investimento.getCodigoInvestimento());
+            stmt.setString(3, investimento.getNomeInvestimento());
+            stmt.setString(4, investimento.getDescInvestimento());
+            stmt.setDouble(5, investimento.getValorInvestimento());
+            stmt.setDate(6, Date.valueOf(investimento.getDataInvestimento()));
+            stmt.setDouble(7, investimento.getValorRendimento());
 
 
-        stmt.execute();
-        stmt.close();
+            stmt.execute();
+            stmt.close();
+        }  catch (SQLSyntaxErrorException t) {
+            System.out.println("Tabela não existente...");
+            throw new RuntimeException(t);
+        }
     }
 
     public List<Investimento> select() throws SQLException {
 
-        List<Investimento> investimentos = new ArrayList<>();
-        String sql = "select * from t_investimento order by cd_investimento";
-        PreparedStatement stmt = conexao.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
+        try {
+            List<Investimento> investimentos = new ArrayList<>();
+            String sql = "select * from t_investimento order by cd_investimento";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
 
-        while (rs.next()) {
-            Investimento investimento = new Investimento();
-            investimento.setCodigoInvestimento(rs.getInt("cd_investimento"));
-            investimento.setNomeInvestimento(rs.getString("nm_investimento"));
-            investimento.setDescInvestimento(rs.getString("ds_investimento"));
-            investimento.setValorInvestimento(rs.getDouble("vl_investimento"));
-            investimento.setDataInvestimento(rs.getDate("dt_investimento").toLocalDate());
-            investimento.setValorRendimento(rs.getDouble("vl_rendimento_investimento"));
+            while (rs.next()) {
+                Investimento investimento = new Investimento();
+                investimento.setCodigoInvestimento(rs.getInt("cd_investimento"));
+                investimento.setNomeInvestimento(rs.getString("nm_investimento"));
+                investimento.setDescInvestimento(rs.getString("ds_investimento"));
+                investimento.setValorInvestimento(rs.getDouble("vl_investimento"));
+                investimento.setDataInvestimento(rs.getDate("dt_investimento").toLocalDate());
+                investimento.setValorRendimento(rs.getDouble("vl_rendimento_investimento"));
 
-            investimentos.add(investimento);
+                investimentos.add(investimento);
+            }
+
+            stmt.close();
+            rs.close();
+
+            return investimentos;
+        } catch (SQLSyntaxErrorException t) {
+            System.out.println("Tabela não existente...");
+            throw new RuntimeException(t);
         }
-
-        stmt.close();
-        rs.close();
-
-        return investimentos;
     }
 
     public Investimento selectByCd(int codigoInvestimento) throws SQLException {
-        Investimento investimento = null;
-        String sql = "select * from t_investimento where cd_investimento = ?";
-        PreparedStatement stmt = conexao.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
 
-        while (rs.next()) {
-            investimento = new Investimento();
-            investimento.setCodigoInvestimento(rs.getInt("cd_investimento"));
-            investimento.setNomeInvestimento(rs.getString("nm_investimento"));
-            investimento.setDescInvestimento(rs.getString("ds_investimento"));
-            investimento.setValorInvestimento(rs.getDouble("vl_investimento"));
-            investimento.setDataInvestimento(rs.getDate("dt_investimento").toLocalDate());
-            investimento.setValorRendimento(rs.getDouble("vl_rendimento_investimento"));
+        try {
+            Investimento investimento = null;
+            String sql = "select * from t_investimento where cd_investimento = ?";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                investimento = new Investimento();
+                investimento.setCodigoInvestimento(rs.getInt("cd_investimento"));
+                investimento.setNomeInvestimento(rs.getString("nm_investimento"));
+                investimento.setDescInvestimento(rs.getString("ds_investimento"));
+                investimento.setValorInvestimento(rs.getDouble("vl_investimento"));
+                investimento.setDataInvestimento(rs.getDate("dt_investimento").toLocalDate());
+                investimento.setValorRendimento(rs.getDouble("vl_rendimento_investimento"));
+            }
+
+            stmt.close();
+            rs.close();
+
+            return investimento;
+        } catch (SQLSyntaxErrorException t) {
+            System.out.println("Tabela não existente...");
+            throw new RuntimeException(t);
         }
-
-        stmt.close();
-        rs.close();
-
-        return investimento;
     }
 
     public void delete(int codigoInvestimento) throws SQLException {
 
-        String sql = "delete from t_investimento where cd_investimento = ?";
-        PreparedStatement stmt = conexao.prepareStatement(sql);
-        stmt.setInt(2, codigoInvestimento);
-        stmt.execute();
-        stmt.close();
+        try {
+            String sql = "delete from t_investimento where cd_investimento = ?";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(2, codigoInvestimento);
+            stmt.execute();
+            stmt.close();
+        } catch (SQLSyntaxErrorException t) {
+            System.out.println("Tabela não existente...");
+            throw new RuntimeException(t);
+        }
     }
-
 }

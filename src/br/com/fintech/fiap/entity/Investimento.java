@@ -11,6 +11,9 @@ public class Investimento {
     private LocalDate dataInvestimento;
     private double valorRendimento;
 
+    public Investimento() {
+    }
+
     public int getCodigoInvestimento() {
         return codigoInvestimento;
     }
@@ -63,5 +66,17 @@ public class Investimento {
     public Investimento setValorRendimento(double valorRendimento) {
         this.valorRendimento = valorRendimento;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Investimento{" +
+                "codigoInvestimento=" + codigoInvestimento +
+                ", nomeInvestimento='" + nomeInvestimento + '\'' +
+                ", descInvestimento='" + descInvestimento + '\'' +
+                ", valorInvestimento=" + valorInvestimento +
+                ", dataInvestimento=" + dataInvestimento +
+                ", valorRendimento=" + valorRendimento +
+                '}';
     }
 }

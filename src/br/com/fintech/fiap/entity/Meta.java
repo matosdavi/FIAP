@@ -11,6 +11,9 @@ public class Meta {
     private LocalDate dataInicio;
     private LocalDate dataTermino;
 
+    public Meta() {
+    }
+
     public int getCodigoMeta() {
         return codigoMeta;
     }
@@ -63,5 +66,17 @@ public class Meta {
     public Meta setDataTermino(LocalDate dataTermino) {
         this.dataTermino = dataTermino;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Meta{" +
+                "codigoMeta=" + codigoMeta +
+                ", nomeMeta='" + nomeMeta + '\'' +
+                ", descMeta='" + descMeta + '\'' +
+                ", valorMeta=" + valorMeta +
+                ", dataInicio=" + dataInicio +
+                ", dataTermino=" + dataTermino +
+                '}';
     }
 }

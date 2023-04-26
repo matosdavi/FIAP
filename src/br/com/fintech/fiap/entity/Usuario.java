@@ -62,4 +62,16 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "codigoUsuario=" + codigoUsuario +
+                ", nomeUsuario='" + nomeUsuario + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", genero='" + genero + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
 }
