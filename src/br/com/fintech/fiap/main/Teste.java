@@ -24,7 +24,6 @@ public class Teste {
 
         CartaoDAO cartaoDAO = new CartaoDAO();
         Cartao visa = new Cartao();
-//        Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
         visa.setCodigoCartao(20);
@@ -39,7 +38,6 @@ public class Teste {
 
         RendaDAO rendaDAO = new RendaDAO();
         Renda salario = new Renda();
-//        Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
         salario.setCodigoRenda(4);
@@ -52,7 +50,6 @@ public class Teste {
 
         InvestimentoDAO investimentoDAO = new InvestimentoDAO();
         Investimento selic = new Investimento();
-//        Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
         selic.setCodigoInvestimento(9);
@@ -66,7 +63,6 @@ public class Teste {
 
         MetaDAO metaDAO = new MetaDAO();
         Meta maio = new Meta();
-//        Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
         maio.setCodigoMeta(9);
@@ -80,7 +76,6 @@ public class Teste {
 
         GastoDAO gastoDAO = new GastoDAO();
         Gasto mercado = new Gasto();
-//        Usuario davi = new Usuario();
 
         davi.setCodigoUsuario(3);
         mercado.setCodigoGasto(57);
@@ -90,8 +85,6 @@ public class Teste {
         mercado.setDataGasto(LocalDate.of(2023, 07, 06));
 
         gastoDAO.insert(davi, mercado);
-        gastoDAO.select();
-//        usuarioDAO.delete(3);
 
 //        System.out.println(usuarioDAO.select());
 //        System.out.println(rendaDAO.select());
