@@ -19,7 +19,7 @@ public class UsuarioDAO {
 
         try {
             String sql = "insert into t_usuario" +
-                    "(cd_usuario," +
+                    "(id_usuario," +
                     "nm_usuario, " +
                     "dt_nascimento, " +
                     "ds_genero, " +
@@ -79,7 +79,6 @@ public class UsuarioDAO {
             throw new RuntimeException(t);
         }
     }
-
 
     public Usuario selectByCd(int codigoUsuario) throws SQLException {
 
